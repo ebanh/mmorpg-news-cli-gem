@@ -1,5 +1,7 @@
-require "mmorpg_news/version"
+require 'open-uri'
+require 'nokogiri'
+require 'pry'
 
-module MmorpgNews
-  # Your code goes here...
-end
+require "mmorpg_news/version"
+require "mmorpg_news/cli"
+require "mmorpg_news/game_news"
