@@ -2,7 +2,7 @@ class MmorpgNews::GameNews
   attr_accessor :title, :author, :link, :description, :date
 
 
-  def self.scrape_stories
+  def self.scrape_page
     Nokogiri::HTML(open("http://massivelyop.com/"))
   end
 
@@ -14,7 +14,7 @@ class MmorpgNews::GameNews
 
   def self.create_stories
     stories = []
-    scrape_stories.css("section#content article").each do |article|
+    scrape_page.css("section#content article").each do |article|
       story = self.new
       story.title = article.css("h2").text
       story.author = article.css(".fn").text
