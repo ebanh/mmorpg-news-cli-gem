@@ -1,28 +1,14 @@
 # MmorpgNews
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/mmorpg_news`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This is a basic news scraper, which pulls a list of mmorpg stories from http://massivelyop.com/ and allows you to select and read the associated article.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'mmorpg_news'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install mmorpg_news
+You can install this gem via gem install mmorpg-news-cli-gem. The mmorpg-news CLI will be installed and you can run mmorpg-news to get the latest mmorpg news stories from http://massivelyop.com/ in your command line.
 
 ## Usage
 
-TODO: Write usage instructions here
+Run mmorpg-news after installing the gem.
 
 ## Development
 
@@ -38,4 +24,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
