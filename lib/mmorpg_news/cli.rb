@@ -6,8 +6,10 @@ class MmorpgNews::CLI
   end
 
   def list_stories
+    puts "\e[H\e[2J"
     puts "MMORPG's top news stories:"
-    @story_items = MmorpgNews::GameNews.scrape_stories
+    puts ""
+    @story_items = MmorpgNews::GameNews.create_stories
     @story_items.each.with_index(1) do |story, i|
       puts "#{i}. #{story.title}"
       puts "Posted #{story.date.first} by #{story.author}"
@@ -17,18 +19,21 @@ class MmorpgNews::CLI
   def menu
     input = nil
     while input != "exit"
-      puts "Enter the number of the news story you like more info on or type list to see them again or type exit:"
+      puts "\nEnter the number of the news story you would like to read:"
+      puts "Type 'list' to see the article list again or 'exit' to exit:"
       input = gets.strip.downcase
-      if input.to_i > 0
+      if input.to_i > 0 && @story_items[input.to_i-1] != nil
         the_story = @story_items[input.to_i-1]
+        puts "\e[H\e[2J"
         puts "#{the_story.title}"
-        puts "Posted #{the_story.date} by #{the_story.author}"
-        puts "#{the_story.description}"
-        puts "#{the_story.link}"
+        puts "Posted #{the_story.date.first} by #{the_story.author}"
+        puts "\n#{MmorpgNews::GameNews.get_story(the_story.link)}"
+        puts "\n#{the_story.link}"
       elsif input == "list"
           list_stories
       elsif input == "exit"
-          goodbye
+        puts "\e[H\e[2J"
+        goodbye
       else
         puts "invalid entry!"
       end
@@ -36,7 +41,7 @@ class MmorpgNews::CLI
   end
 
   def goodbye
-    puts "Thank you for using MMORPG's news Gem!"
+    puts "Thank you for using MMORPG news Gem!"
   end
 
 
