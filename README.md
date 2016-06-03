@@ -4,11 +4,11 @@ This is a basic news scraper, which pulls a list of mmorpg stories from http://m
 
 ## Installation
 
-You can install this gem via gem install mmorpg-news-cli-gem. The mmorpg-news CLI will be installed and you can run mmorpg-news to get the latest mmorpg news stories from http://massivelyop.com/ in your command line.
+You can install this gem via gem install mmorpg_news. The mmorpg_news CLI will be installed and you can run mmorpg_news to get the latest mmorpg news stories from http://massivelyop.com/ in your command line.
 
 ## Usage
 
-Run mmorpg-news after installing the gem.
+Run mmorpg_news after installing the gem.
 
 ## Development
 
