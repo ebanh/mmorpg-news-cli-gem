@@ -6,7 +6,7 @@ require 'mmorpg_news/version'
 Gem::Specification.new do |spec|
   spec.name          = "mmorpg_news"
   spec.version       = MmorpgNews::VERSION
-  spec.authors       = ["ebanh"]
+  spec.authors       = ["Eban Hernandez"]
   spec.email         = ["ebanhernandez@gmail.com"]
 
   spec.summary       = %q{MMORPG News}
@@ -15,9 +15,10 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = "exe"
-  spec.executables   = ["mmorpg_news"]
-  spec.require_paths = ["lib", "lib/mmorpg_news"]
+  spec.bindir        = "bin"
+  # spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.executables   << 'mmorpg_news'
+  spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.11"
   spec.add_development_dependency "rake", "~> 10.0"

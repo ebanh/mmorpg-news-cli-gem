@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-require "bundler/setup"
-require "mmorpg_news"
+require_relative '../lib/mmorpg_news'
 
 MmorpgNews::CLI.new.call
